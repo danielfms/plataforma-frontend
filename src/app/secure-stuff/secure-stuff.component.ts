@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthHttp, tokenNotExpired} from 'angular2-jwt';
-import 'rxrj/add/operator/map';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'secure-stuff',
@@ -8,7 +8,7 @@ import 'rxrj/add/operator/map';
   styleUrls: ['./secure-stuff.component.css']
 })
 export class SecureStuffComponent implements OnInit {
-  stuff: [];
+  stuff = [];
   constructor(private authHttp: AuthHttp) { }
 
   getSecureStuff(){
