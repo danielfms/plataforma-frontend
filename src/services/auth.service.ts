@@ -9,10 +9,10 @@ export class AuthService {
   constructor(private http: Http) { }
 
   login(credentials){
-    this.http.post("http://localhost/api/authenticate", credentials)
+    this.http.post("http://localhost:8000/authlogin", credentials)
         .map(res => res.json())
         .subscribe(
-          data => localStorage.setItem("id_token", data.id_token),
+          data => localStorage.setItem("id_token", data.token),
           error => console.log(error)
         );
   }
