@@ -9,7 +9,8 @@ export class AuthService {
   constructor(private http: Http) { }
 
   login(credentials){
-    this.http.post("http://localhost:8000/authlogin", credentials)
+    console.log(credentials)
+    this.http.post("http://localhost:8000/api/authenticate", credentials)
         .map(res => res.json())
         .subscribe(
           data => localStorage.setItem("id_token", data.token),

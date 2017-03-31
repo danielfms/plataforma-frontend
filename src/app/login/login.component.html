@@ -1,5 +1,5 @@
-<form #f="ngForm" (ngSubmit)="onLogin(f.value)" *ngIf="!auth.loggedIn()">
-  <input type="text" placeholder="username" ngControl="username" />
-  <input type="password" placeholder="password" ngControl="password" />
+<form (ngSubmit)="onLogin(email.value, password.value)" *ngIf="!auth.loggedIn()">
+  <input type="text" placeholder="email" #email />
+  <input type="password" placeholder="password" #password/>
   <button type="submit">Submit</button>
 </form>
